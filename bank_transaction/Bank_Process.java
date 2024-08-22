@@ -7,18 +7,24 @@ class Bank {
     
     
     //Instance variable to store bank balance
-    private double amount;    
+    private double amount;  
+    private String name;  
 
+    // Simple Constructor
+    Bank(){
+
+    }
     
     //class Constructor which initialize the given bank balance amount
-    Bank(double amount){
+    Bank(double amount, String name){
         this.amount = amount;
+        this.name = name;
     }
 
 
     // display() function to display the value of amount variable
     public void display() {
-        System.out.println("Your Current balance is " + this.amount);
+        System.out.println("Current balance of " + this.name + ": " + this.amount);
     }
 
 
@@ -34,14 +40,14 @@ class Bank {
         Boolean sufficient = ( limit <= 1000 ) ? false : true ;         
 
         if (sufficient) {
-            System.out.println("Withdraw Successful :)");
+            System.out.println(withdrawalAmount + " Withdraw Successful :)" );
 
             this.amount -= withdrawalAmount;
             display();
         }
         
         else {
-            System.out.println("Amount is insufficient to withdraw");
+            System.out.println("Amount is insufficient to withdraw in account of " + this.name);
         }
     }
 
@@ -56,19 +62,40 @@ class Bank {
     }
 }
 
+// creates and manages bank accounts
+
+class Account extends Bank {
+
+    Account (double amount, String name) {
+        super(amount,name);
+    }
+
+}
+
+
+
 
 // This is the driver class contains main() function
 public class Bank_Process {
     public static void main(String[] args) {
         
         //Object of Bank class is instantiated
-        Bank account1 = new Bank(10000);
+        Account account1 = new Account(10000, "Account 1");
+        Account account2 = new Account(10000, "Account 2");
 
 
         account1.display();                         //it displays the current balance
 
+        account2.display();                         //it displays the current balance
+
+        account1.withdraw(9000);    // it tries to withdraw 9000 rs.
+
+        account2.withdraw(8000);    // withdraws 8000 rs.from account 1
+
+
         account1.deposit(5000);         // it deposits and displays the new 
                                                       // value of amount of account1
+
 
     }
 }

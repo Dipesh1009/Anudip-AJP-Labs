@@ -3,6 +3,7 @@
 import java.util.Scanner;
 
 public class Lab1 {
+
     public static void main(String[] args) {
         //creating a Scanner object to take inputs 
         Scanner inp = new Scanner(System.in);
