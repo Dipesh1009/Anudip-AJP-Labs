@@ -1,8 +1,10 @@
+package maxOfTwo;
 // Task : Create a program to find maximum between two inputs
 
 import java.util.Scanner;
 
 public class Lab1 {
+
 
     public static void main(String[] args) {
         //creating a Scanner object to take inputs 
