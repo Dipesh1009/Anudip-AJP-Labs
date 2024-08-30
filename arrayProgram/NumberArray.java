@@ -1,17 +1,27 @@
+// TASK: To make an array and its sub array from index 2 to 6; and
+// finding the second highest in the sub array
+
 package arrayProgram;
 
+
+// Creating the Class NumberArray
 public class NumberArray {
 
+    // a static function  makeSubArray() to make the subarray from the given 
+    // array and the beginning and ending indexes i.e. 'i' and 'j' 
     static int[] makeSubArray(int i, int j, int[] array) {
         
-        int subArray[] = new int[((j-i) + 1)];
-        for (int index = 0; i<=j; index++) {
+        int subArray[] = new int[((j-i) + 1)];          // creating sub array
+        
+        for (int index = 0; i<=j; index++) {            // loop to add elements of existing array to subarray
             subArray[index] = array[i];
             i++;
         }
-        return subArray;
+        return subArray;                    // returning the subArray
     }
 
+    // a static function findSecondHighest() to find the second highest number
+    // in the given array
     static int findSecondHighest(int[] a) {
         int high1 = Integer.MIN_VALUE, high2 = Integer.MIN_VALUE;
         for (int i : a) {

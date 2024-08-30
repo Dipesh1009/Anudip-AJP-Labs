@@ -9,10 +9,14 @@ public class Strong_Number {
 
     // factorial() to find out factorial of given argument integer
     static int factorial (int num) {
-        if (num == 1 ) 
+        if (num == 0)
             return 1;
 
-        return factorial(num - 1) * num;
+        else if (num == 1 ) 
+            return 1;
+    
+        else
+            return factorial(num - 1) * num;
     }
 
     // checkStrongNumber() function to find out if the given number 
